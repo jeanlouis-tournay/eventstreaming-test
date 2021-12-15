@@ -1,0 +1,12 @@
+{
+  "productName": "eventstreaming-test",
+  "specificationName": "spec-1",
+  "componentSpecifications": {
+    "producer": [
+      {
+        "version": "1.0.0",
+        "nbRequestedInstances": 1
+      }
+    ]
+  }
+}

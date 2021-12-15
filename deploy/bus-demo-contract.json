@@ -1,0 +1,54 @@
+{
+  "name": "busmapdemo",
+  "description": "Bus Map Demo",
+  "version": "1.0.0",
+  "platformVersion": "1.2.0",
+  "isInternal": false,
+  "ingressAuthorizedDigitalProducts":[],
+  "eventStreamingConfiguration": {
+    "topics":
+    [
+      {
+        "name": "demo-gps-events"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "busmap",
+      "description": "Event Streaming Bus Map Demo Consumer",
+      "controllerType": "deployment",
+      "imageName": "eventstreaming-bus-map",
+      "containerType": "python",
+      "platformServices": {
+        "event-streaming": {
+          "applicationType": "kafka"
+        }
+      },
+      "serviceEndPoint": {
+        "name": "bus-map",
+        "port": 8080,
+        "protocol": "http",
+        "visibleByGateway": true
+      }
+    },
+    {
+      "name": "bus",
+      "description": "Event Streaming Bus Map Demo GPS Producer",
+      "controllerType": "deployment",
+      "imageName": "eventstreaming-bus-gps",
+      "containerType": "python",
+      "platformServices": {
+        "event-streaming": {
+          "applicationType": "kafka"
+        }
+      },
+      "serviceEndPoint": {
+        "name": "busmap",
+        "port": 8080,
+        "protocol": "http",
+        "visibleByGateway": true
+      }
+    }
+  ]
+}
