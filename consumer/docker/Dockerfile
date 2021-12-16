@@ -10,7 +10,7 @@ USER 1000
 # read-only container: declare volumes in which the system writes
 VOLUME /tmp
 
-COPY eventstreaming-test-0.0.1-SNAPSHOT.jar /home/app.jar
+COPY app.jar /home/app.jar
 
 # start the springboot application
 ENTRYPOINT java -jar  /home/app.jar

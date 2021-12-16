@@ -1,51 +1,49 @@
 {
-  "name": "busmapdemo",
-  "description": "Bus Map Demo",
+  "name": "eventstreaming-test",
+  "description": "Test digital product event streaming config",
   "version": "1.0.0",
-  "platformVersion": "1.2.0",
-  "isInternal": false,
-  "ingressAuthorizedDigitalProducts":[],
+  "platformVersion": "1.0.0",
   "eventStreamingConfiguration": {
     "topics":
     [
       {
-        "name": "demo-gps-events"
+        "name": "test-topic"
       }
     ]
   },
   "components": [
     {
-      "name": "busmap",
-      "description": "Event Streaming Bus Map Demo Consumer",
+      "name": "producer",
+      "description": "Stream producer",
       "controllerType": "deployment",
-      "imageName": "eventstreaming-bus-map",
-      "containerType": "python",
+      "imageName": "softwarefactory.dplt.eu/eventstreaming-test-producer-2:latest",
+      "containerType": "springboot",
       "platformServices": {
         "event-streaming": {
           "applicationType": "kafka"
         }
       },
       "serviceEndPoint": {
-        "name": "bus-map",
-        "port": 8080,
+        "name": "producer",
+        "port": 8000,
         "protocol": "http",
         "visibleByGateway": true
       }
     },
     {
-      "name": "bus",
-      "description": "Event Streaming Bus Map Demo GPS Producer",
+      "name": "consumer",
+      "description": "Stream consumer",
       "controllerType": "deployment",
-      "imageName": "eventstreaming-bus-gps",
-      "containerType": "python",
+      "imageName": "softwarefactory.dplt.eu/eventstreaming-test-consumer-2:latest",
+      "containerType": "springboot",
       "platformServices": {
         "event-streaming": {
           "applicationType": "kafka"
         }
       },
       "serviceEndPoint": {
-        "name": "busmap",
-        "port": 8080,
+        "name": "consumer",
+        "port": 8000,
         "protocol": "http",
         "visibleByGateway": true
       }

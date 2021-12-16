@@ -1,0 +1,18 @@
+app:
+  kafka:
+    consumer:
+      topic: DigitalProduct.eventstreaming-test.test-topic
+spring:
+  kafka:
+    consumer:
+      group-id: 1
+    properties:
+      ssl:
+        endpoint:
+          identification:
+            algorithm:
+logging:
+  level:
+    org:
+      apache: DEBUG
+      springframework: DEBUG

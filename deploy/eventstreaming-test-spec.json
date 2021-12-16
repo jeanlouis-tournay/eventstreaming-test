@@ -1,0 +1,28 @@
+{
+  "productName": "eventstreaming-test",
+  "specificationName": "spec-1",
+  "componentSpecifications": {
+    "producer": [
+      {
+        "version": "1.0.0",
+        "nbRequestedInstances": 1,
+        "quotaProfile": "large"
+      }
+    ],
+    "consumer": [
+      {
+        "version": "1.0.0",
+        "nbRequestedInstances": 1,
+        "quotaProfile": "large",
+        "requestResource": {
+          "memoryKiloBytes": 1000000,
+          "cpuMilli": 1000
+        },
+        "limitResource": {
+          "memoryKiloBytes": 2000000,
+          "cpuMilli": 2000
+        }
+      }
+    ]
+  }
+}
