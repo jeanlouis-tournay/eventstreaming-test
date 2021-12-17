@@ -5,14 +5,10 @@ app:
 spring:
   kafka:
     consumer:
-      group-id: 1
+      group-id: eventstreaming-test-1
     properties:
       ssl:
         endpoint:
           identification:
             algorithm:
-logging:
-  level:
-    org:
-      apache: DEBUG
-      springframework: DEBUG
+

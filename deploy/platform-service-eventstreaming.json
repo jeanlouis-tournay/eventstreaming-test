@@ -1,13 +1,25 @@
 {
   "name": "event-streaming",
   "description": "description",
-  "environment": "envg",
+  "environment": "envk",
   "serviceType": "eventStreaming",
   "configuration": {
     "springboot": {
+      "envVars": {
+        "SPRING_KAFKA_BOOTSTRAP_SERVERS": {
+          "value": "kafka.confluentinc.svc.cluster.local:9071"
+        },
+        "SPRING_KAFKA_PROPERTIES_SCHEMA_REGISTRY_URL": {
+          "value": "https://schemaregistry.confluentinc.svc.cluster.local:8081"
+        }
+      }
     },
     "python": {
+      "envVars": {
+        "KAFKA_BOOTSTRAP_SERVERS": {
+          "value": "kafka.confluentinc.svc.cluster.local:9071"
+        }
+      }
     }
   }
 }
-

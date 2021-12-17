@@ -9,8 +9,4 @@ spring:
         endpoint:
           identification:
             algorithm:
-logging:
-  level:
-    org:
-      apache: DEBUG
-      springframework: DEBUG
+

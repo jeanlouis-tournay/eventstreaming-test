@@ -1,0 +1,58 @@
+{
+  "name": "eventstreaming-test",
+  "description": "Test digital product event streaming config",
+  "version": "1.0.0",
+  "platformVersion": "1.0.0",
+  "eventStreamingConfiguration": {
+    "topics":
+    [
+      {
+        "name": "test-topic",
+        "consumers": [
+          "eventstreaming-test.consumer"
+        ],
+        "producers": [
+          "eventstreaming-test.producer"
+        ]
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "producer",
+      "description": "Stream producer",
+      "controllerType": "deployment",
+      "imageName": "softwarefactory.dplt.eu/eventstreaming-test-producer-2:latest",
+      "containerType": "springboot",
+      "platformServices": {
+        "event-streaming": {
+          "applicationType": "kafka"
+        }
+      },
+      "serviceEndPoint": {
+        "name": "producer",
+        "port": 8000,
+        "protocol": "http",
+        "visibleByGateway": true
+      }
+    },
+    {
+      "name": "consumer",
+      "description": "Stream consumer",
+      "controllerType": "deployment",
+      "imageName": "softwarefactory.dplt.eu/eventstreaming-test-consumer-2:latest",
+      "containerType": "springboot",
+      "platformServices": {
+        "event-streaming": {
+          "applicationType": "kafka"
+        }
+      },
+      "serviceEndPoint": {
+        "name": "consumer",
+        "port": 8000,
+        "protocol": "http",
+        "visibleByGateway": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "product-operator",
+  "environment": "envk",
+  "dockerConfig": {
+    "defaultDockerRegistryUrl": "https://softwarefactory.dplt.eu:443",
+    "dockerRegistries": [
+      {
+        "url": "https://softwarefactory.dplt.eu:443",
+        "username": "download",
+        "password": "credential://nexus-docker-registry/password",
+        "cidrBlocks": [
+          "0.0.0.0/0"
+        ]
+      }
+    ]
+  },
+  "dnsIngressDomain": "apps.envk.envk.dplt.eu",
+  "egressFirewallEnabled": true,
+  "forwardProxyEnabled": true,
+  "crossSecurityEnabled": true
+}
