@@ -22,7 +22,7 @@ public class Controller {
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
 
 
-    @PostMapping(value = "/message",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/message",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(code = HttpStatus.CREATED)
     public void put(@RequestBody PushedMessage message) {
         if(message==null || message.getMessage()==null || message.getMessage().isEmpty()) {
