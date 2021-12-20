@@ -1,16 +1,19 @@
 # Test Program for Event Streaming
 
 
-This programs can be used for testing deployment and configuration of a digital product which requires event streaming. 
+This programs can be used for testing deployment and configuration of a spring boot digital product which requires event streaming. 
 
 
-### Scenario 
+### Test Scenario 
 
-- A message is posted to the producer via a rest call 
-- The producer send the message to a kafaka topic 
-- The consumer get the message from the kafka topic 
-- A Rest call in the consumer allows to retrieve the message 
 
+- Create platform service (if not present), contract and specification.
+- Deploy Product.
+- A rest call posts a message to the producer.
+- The producer sends the message to a kafka topic. 
+- The consumer get the message from the kafka topic. 
+- A Rest call in the consumer allows to retrieve the message. 
+- Message posted in the producer equals message retrieved in the consumer. 
 
 
 post a Message to the producer 
@@ -29,6 +32,7 @@ curl --socks5-hostname localhost:1080  $CONSUMER_URL/message
 
 ### Deployment 
 
-- [Platform service with event streaming](deploy/platform-service-eventstreaming.json)
+- [Platform service for event streaming](deploy/platform-service-eventstreaming.json)
 - [Contract](deploy/contract.json) 
 - [Specification](deploy/specification.json) 
+
