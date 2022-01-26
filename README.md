@@ -32,7 +32,9 @@ curl --socks5-hostname localhost:1080  $CONSUMER_URL/message
 
 ### Deployment 
 
-- [Platform service for event streaming](deploy/platform-service-eventstreaming.json)
-- [Contract](deploy/contract.json) 
-- [Specification](deploy/specification.json) 
+Create the following resources in the product operators in the following order:
 
+1. [Platform service for event streaming](deploy/platform-service-eventstreaming.json)
+2. [Value schema for topics](deploy/value-eventstreaming-schema.json)
+3. [Contract](deploy/contract.json)
+4. [Specification](deploy/specification.json) 

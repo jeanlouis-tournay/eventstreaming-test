@@ -21,9 +21,8 @@ public class KafkaConsumerService {
     private static final Logger logger = LoggerFactory.getLogger(KafkaConsumerService.class);
 
     @KafkaListener(topics = {"#{'${app.kafka.consumer.topic}'.split(',')}"})
-    public void receive(@Payload String message) {
+    public void receive(@Payload PushedMessage message) {
         logger.info("message received: {}", message);
-        messageRepository.setLastMessage(PushedMessage
-                .builder().message(message).build());
+        messageRepository.setLastMessage(message);
     }
 }

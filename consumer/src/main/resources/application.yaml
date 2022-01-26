@@ -1,14 +1,20 @@
 app:
   kafka:
     consumer:
-      topic: DigitalProduct.eventstreaming-test.test-topic
+      topic: DigitalProduct.eventstreaming-test-schema.schema-test-topic
 spring:
   kafka:
     consumer:
       group-id: eventstreaming-test-1
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.cegeka.dplt.*
     properties:
       ssl:
         endpoint:
           identification:
             algorithm:
-

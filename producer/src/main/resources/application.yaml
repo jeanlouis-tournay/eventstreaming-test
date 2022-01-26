@@ -1,7 +1,7 @@
 app:
   kafka:
     producer:
-      topic: DigitalProduct.eventstreaming-test.test-topic
+      topic: DigitalProduct.eventstreaming-test-schema.schema-test-topic
 spring:
   kafka:
     properties:
@@ -9,4 +9,6 @@ spring:
         endpoint:
           identification:
             algorithm:
-
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

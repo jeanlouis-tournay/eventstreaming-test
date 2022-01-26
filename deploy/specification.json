@@ -1,5 +1,5 @@
 {
-  "productName": "eventstreaming-test",
+  "productName": "eventstreaming-test-schema",
   "specificationName": "spec-1",
   "componentSpecifications": {
     "producer": [

@@ -1,5 +1,5 @@
 {
-  "name": "eventstreaming-test",
+  "name": "eventstreaming-test-schema",
   "description": "Test digital product event streaming config",
   "version": "1.0.0",
   "platformVersion": "1.0.0",
@@ -9,11 +9,18 @@
       {
         "name": "test-topic",
         "consumers": [
-          "eventstreaming-test.consumer"
+          "eventstreaming-test-schema.consumer"
         ],
         "producers": [
-          "eventstreaming-test.producer"
-        ]
+          "eventstreaming-test-schema.producer"
+        ],
+        "schemas": {
+          "value": {
+            "name": "eventstreaming-test-message-value",
+            "version": "v1",
+            "compatibility": "BACKWARD"
+          }
+        }
       }
     ]
   },
@@ -22,7 +29,7 @@
       "name": "producer",
       "description": "Stream producer",
       "controllerType": "deployment",
-      "imageName": "softwarefactory.dplt.eu/eventstreaming-test-producer-2:latest",
+      "imageName": "softwarefactory.dplt.eu/eventstreaming-test-producer-schema:latest",
       "containerType": "springboot",
       "platformServices": {
         "event-streaming": {
@@ -40,7 +47,7 @@
       "name": "consumer",
       "description": "Stream consumer",
       "controllerType": "deployment",
-      "imageName": "softwarefactory.dplt.eu/eventstreaming-test-consumer-2:latest",
+      "imageName": "softwarefactory.dplt.eu/eventstreaming-test-consumer-schema:latest",
       "containerType": "springboot",
       "platformServices": {
         "event-streaming": {

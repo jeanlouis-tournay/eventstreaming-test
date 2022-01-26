@@ -30,7 +30,7 @@ public class Controller {
         }
         try {
             logger.info("received message "+message.getMessage());
-            kafkaProducerService.send(message.getMessage());
+            kafkaProducerService.send(message);
         } catch (Exception e) {
             throw new InternalServerErrorException(e.getMessage());
         }

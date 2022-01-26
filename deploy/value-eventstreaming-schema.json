@@ -1,0 +1,7 @@
+{
+  "name": "eventstreaming-test-message-value",
+  "version": "v1",
+  "targetContent": "value",
+  "format": "json",
+  "content": "{\n  \"additionalProperties\": false,\n  \"description\": \"Test schema message\",\n  \"properties\": {\n    \"message\": {\n      \"description\": \"Text of the message\",\n      \"type\": \"string\"\n    }\n  },\n  \"title\": \"value_DigitalProduct.eventstreaming_test.test_topic\",\n  \"type\": \"object\"\n}"
+}
